@@ -17,12 +17,22 @@ package com.example.android.sunshine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView mWeatherTextView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast);
+
+        mWeatherTextView = (TextView) findViewById(R.id.tv_weather_data);
+
+        String[] fakeWeatherData = {"Temprature 25","Date-25/11", "climate=sunny"};
+
+        for(String fakeWeather: fakeWeatherData){
+            mWeatherTextView.append(fakeWeather+"\n");
+        }
     }
 }
